@@ -1,3 +1,6 @@
+import './style.css'
+
+
 function nav() {
   const nav = document.createElement('nav');
   const ul = document.createElement('ul');
