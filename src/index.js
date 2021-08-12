@@ -23,11 +23,46 @@ function nav() {
   return nav
 }
 
+function homeComponent() {
+  // headline
+  // background
+  // sayings
+  const content = document.querySelector('.content')
+  const headline = document.createElement('h1');
+  const tagline = document.createElement('h3');
+
+  headline.innerHTML = "This is a home page Title";
+  tagline.innerHTML = "This is a tagline";
+
+  content.innerHTML = "";
+  content.appendChild(headline);
+  content.appendChild(tagline);
+}
+
 const tabController = ( () => {
   const content = document.querySelector('.content');
   const tabSwitch = (e) => {
-    content.innerHTML = e.target.textContent;
+    const component = e.target.textContent;
+    switch (component) {
+      case 'Home':
+        homeComponent();
+        break;
+      case 'Menu':
+        console.log("menu component");
+        break;
+      case 'Contact':
+        console.log("contact component");
+        break;
+      default:
+    };
   };
+
+  // home page as default
+  const home = () => {
+    content.innerHTML = "home component"
+  };
+
+  home();
 
   return {tabSwitch}
 })();
