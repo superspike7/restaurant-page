@@ -24,10 +24,9 @@ function nav() {
 }
 
 function homeComponent() {
-  // headline
-  // background
-  // sayings
   const content = document.querySelector('.content')
+
+  const home = document.createElement('div') 
   const headline = document.createElement('h1');
   const tagline = document.createElement('h3');
 
@@ -35,8 +34,10 @@ function homeComponent() {
   tagline.innerHTML = "This is a tagline";
 
   content.innerHTML = "";
-  content.appendChild(headline);
-  content.appendChild(tagline);
+  home.classList.add('home')
+  home.appendChild(headline);
+  home.appendChild(tagline);
+  content.appendChild(home);
 }
 
 const tabController = ( () => {
@@ -58,16 +59,13 @@ const tabController = ( () => {
   };
 
   // home page as default
-  const home = () => {
-    content.innerHTML = "home component"
-  };
 
-  home();
+  homeComponent();
 
   return {tabSwitch}
 })();
 
-document.body.appendChild(nav());
+document.body.prepend(nav());
 
 document.querySelectorAll('.tab-btn').forEach(tab => {
   tab.addEventListener('click', tabController.tabSwitch);
