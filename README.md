@@ -1,7 +1,7 @@
 # restaurant-page
 
 ## Assignment:
--make a tab style restaurant landing page using only javascript and no html.
+-make a tab style restaurant landing page using only javascript and without writing html.
 
 ## What I learned in this project:
 -installing and configuring packages from npm.
