@@ -115,7 +115,7 @@ const tabController = ( () => {
 
   // home page as default
 
-  contactComponent();
+  homeComponent();
 
   return {tabSwitch}
 })();
