@@ -117,20 +117,19 @@ nav ul li p:hover {
 }
 
 
-.content .menu {
+.menu, .contact {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.content .menu .card {
+.card {
   width: 20rem;
   height: 20rem;
   color: aliceblue;
   background: rgba(0, 0, 0, 0.6);
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-radius: 1rem;
 }
 
 .card h1 {
@@ -140,4 +139,8 @@ nav ul li p:hover {
 
 .card p {
   margin-bottom: 0.5rem;
+}
+
+.contact .card h3{
+  line-height: 2rem;
 }

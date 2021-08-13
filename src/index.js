@@ -73,6 +73,29 @@ function menuComponent() {
 };
 
 
+// TODO:
+function contactComponent() {
+  const content = document.querySelector('.content');
+
+  const contact = document.createElement('div');
+  const headline = document.createElement('h1');
+  const info = document.createElement('h3');
+  const card = document.createElement('div');
+
+  headline.innerHTML = "Contact Us";
+  info.innerHTML = "9969-1234-23 or restaurant@email.com";
+
+  content.innerHTML = "";
+  contact.classList.add('contact');
+  card.classList.add('card');
+
+  card.appendChild(headline);
+  card.appendChild(info);
+  contact.appendChild(card);
+  content.appendChild(contact);
+};
+
+
 const tabController = ( () => {
   const tabSwitch = (e) => {
     const component = e.target.textContent;
@@ -84,7 +107,7 @@ const tabController = ( () => {
         menuComponent();
         break;
       case 'Contact':
-        console.log("contact component");
+        contactComponent();
         break;
       default:
     };
@@ -92,7 +115,7 @@ const tabController = ( () => {
 
   // home page as default
 
-  menuComponent();
+  contactComponent();
 
   return {tabSwitch}
 })();
