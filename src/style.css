@@ -92,14 +92,14 @@ nav ul li p:hover {
   
 }
 
-.content div {
+.content > div {
+  text-align: center;
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
 }
 
 .content .home {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,3 +116,28 @@ nav ul li p:hover {
   margin-top: 1rem;
 }
 
+
+.content .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .menu .card {
+  width: 20rem;
+  height: 20rem;
+  color: aliceblue;
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.card h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.card p {
+  margin-bottom: 0.5rem;
+}

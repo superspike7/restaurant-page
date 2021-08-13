@@ -24,9 +24,9 @@ function nav() {
 }
 
 function homeComponent() {
-  const content = document.querySelector('.content')
+  const content = document.querySelector('.content');
 
-  const home = document.createElement('div') 
+  const home = document.createElement('div') ;
   const headline = document.createElement('h1');
   const tagline = document.createElement('h3');
 
@@ -34,14 +34,46 @@ function homeComponent() {
   tagline.innerHTML = "This is a tagline";
 
   content.innerHTML = "";
-  home.classList.add('home')
+  home.classList.add('home');
   home.appendChild(headline);
   home.appendChild(tagline);
   content.appendChild(home);
-}
+};
+
+
+function menuComponent() {
+  const content = document.querySelector('.content')
+
+  const menu = document.createElement('div');
+  const card = document.createElement('div');
+  const title = document.createElement('h1');
+  title.innerHTML = "Best Selling"
+
+  const dish = (name, price) => {
+    const el = document.createElement('p');
+    el.innerHTML = `${name} - $${price}`
+    return el;
+  };
+
+  menu.classList.add('menu');
+  card.classList.add('card');
+  card.appendChild(title);
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  card.appendChild(dish('Delicious food', 69.99));
+  menu.appendChild(card);
+  content.innerHTML = "";
+
+  content.appendChild(menu);
+};
+
 
 const tabController = ( () => {
-  const content = document.querySelector('.content');
   const tabSwitch = (e) => {
     const component = e.target.textContent;
     switch (component) {
@@ -49,7 +81,7 @@ const tabController = ( () => {
         homeComponent();
         break;
       case 'Menu':
-        console.log("menu component");
+        menuComponent();
         break;
       case 'Contact':
         console.log("contact component");
@@ -60,7 +92,7 @@ const tabController = ( () => {
 
   // home page as default
 
-  homeComponent();
+  menuComponent();
 
   return {tabSwitch}
 })();
